@@ -5,11 +5,11 @@ config();
 export default {
     
     database: {
-        username: "postgres",
+        username: process.env.USER_NAME,
         password: process.env.POSTGRES_PASSWORD,
         database: "reservation",
-        host: "localhost",
-        port: 5432,
+        host: process.env.HOST,
+        port: process.env.PORT,
         dialect: "postgres"
     },
 
