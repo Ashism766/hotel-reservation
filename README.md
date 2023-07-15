@@ -293,3 +293,36 @@ Server returns the following status codes in its API:
 | 500         | `INTERNAL SERVER ERROR` |
 
 #
+
+## Directory Structure
+```bash
+  .
+├── README.md
+├── app
+│   ├── api
+│   │   ├── admin
+│   │   │   ├── controller.js
+│   │   │   ├── model
+│   │   │   │   └── model.js
+│   │   │   └── routes.js
+│   │   └── users
+│   │       ├── controller.js
+│   │       ├── model
+│   │       │   └── model.js
+│   │       └── routes.js
+│   ├── security
+│   │   ├── controller.js
+│   │   ├── model
+│   │   │   ├── model.js
+│   │   │   └── query.js
+│   │   └── routes.js
+│   └── utils
+│       └── logger.js
+├── app.js
+├── config.js
+├── logs
+│   ├── app.log
+│   └── error.log
+├── package-lock.json
+└── package.json
+```
