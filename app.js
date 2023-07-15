@@ -5,11 +5,10 @@ import cors from "cors";
 
 
 import logger from "./app/utils/logger.js";
-import DemoRouter from "./app/api/Demo/routes.js";
 import SecurityRouter from "./app/security/routes.js";
-import  {authenticateToken, createAdmin, isAdmin} from "./app/security/controller.js";
-
-
+import  {authenticateToken, isAdmin} from "./app/security/controller.js";
+import RoomRouter from "./app/api/admin/routes.js";
+import userRouter from "./app/api/users/routes.js";
 
 const app = express();
 
@@ -17,11 +16,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
 
-app.use(DemoRouter);
+
 app.use(SecurityRouter);
+app.use(isAdmin,RoomRouter);
+app.use(authenticateToken,userRouter);
 
-
-createAdmin();
 
 app.get("/", (req, res)=>{res.send({"It's working": "yes"});});
 app.get("/auth", authenticateToken, (req, res)=> res.send("hoorah! you're authenticated"));
