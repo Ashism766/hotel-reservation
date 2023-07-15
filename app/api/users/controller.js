@@ -52,8 +52,8 @@ const findAllRooms = async (req, res) => {
 
   try{
     const rooms = await Room.findAll({});
-  console.log(rooms);
-  res.status(200).send(rooms);
+    console.log(rooms);
+    res.status(200).send(rooms);
   }
   catch(err){
     console.log(err);
