@@ -9,7 +9,7 @@ import {
 
 const Router = express.Router();
 
-Router.get("/rooms/filter", findRoom);
+Router.get("/room/filter", findRoom);
 Router.post("/room/book", bookRoom);
 Router.get("/room/available", findAvailableDates);
 Router.get("/room/all", findAllRooms);
