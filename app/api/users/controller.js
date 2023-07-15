@@ -5,8 +5,9 @@ import Booking from "./model/model.js";
 
 const findRoom = async (req, res) => {
   try {
-    let { id, minCapacity, maxRent, roomNumber } = req.query;
-
+    let { id, capacity, rent, roomNumber } = req.query;
+    let maxRent = rent;
+    let minCapacity = capacity;
 
     if (id != null) {
       const room = Room.findOne({
@@ -131,10 +132,11 @@ const findAvailableDates = async (req, res) => {
 const bookRoom = async (req, res) => {
   try {
     let { id, startDate, endDate } = req.body;
+    let username = req.userId || "user id or user name";
 
     startDate = new Date(startDate);
     endDate = new Date(endDate);
-    let username = "some username";
+    
 
     const room = await Room.findOne({ where: { id: id } });
     if (room == null) {
