@@ -5,7 +5,7 @@ package-lock.json
 # Ignore specific file extensions within the log folder
 /log/*.log
 /log/*.logs
-
+logs
 # Logs
 /logs/*.log
 /logs/*.logs
