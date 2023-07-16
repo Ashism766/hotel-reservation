@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-undef
 module.exports = {
   up: async (queryInterface) => {
-    // Add foreign key constraint for roomId
     await queryInterface.addConstraint("Bookings", {
       fields: ["id"],
       type: "foreign key",
@@ -14,7 +13,6 @@ module.exports = {
       onDelete: "CASCADE",
     });
 
-    // Add foreign key constraint for username
     await queryInterface.addConstraint("Bookings", {
       fields: ["username"],
       type: "foreign key",
@@ -29,10 +27,7 @@ module.exports = {
   },
 
   down: async (queryInterface) => {
-    // Remove foreign key constraint for roomId
     await queryInterface.removeConstraint("Bookings", "fk_booking_room");
-
-    // Remove foreign key constraint for username
     await queryInterface.removeConstraint("Bookings", "fk_booking_user");
   },
 };
