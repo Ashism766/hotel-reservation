@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "Tat89sAsh",
+    "database": "reservation",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "Tat89sAsh",
+    "database": "reservation",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "Tat89sAsh",
+    "database": "reservation",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
