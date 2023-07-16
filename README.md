@@ -1,7 +1,7 @@
 # Hotel Reservation Backend APIs
 it's the complete backend for creating, booking and searching rooms/hotels.
 
-#
+
 
 ### [Endpoints](#endpoints)
 * [POST /register  .](#register)  To register the user.
