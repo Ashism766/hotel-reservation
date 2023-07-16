@@ -43,7 +43,7 @@ User.prototype.comparePassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-// Synchronize the model with the database
+
 sequelize.sync()
   .then(() => {
     console.log("User model synchronized with the database");
