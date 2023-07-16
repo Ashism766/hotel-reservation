@@ -3,22 +3,35 @@ it's the complete backend for creating, booking and searching rooms/hotels.
 
 #
 
-### All Endpoints
+### [Endpoints](#endpoints)
 * [POST /register  .](#register)  To register the user.
 * [POST /login  .](#user) To login as user.
 * [POST /admin/login](#admin) Login as Admin with full access
-* [POST /room/create](#create) Create new rooms
+* [POST /room/create](#create) Create new rooms. [Admin Only]
 * [GET /room/all ](#all) get all rooms
 * [GET /room/filter ](#filter) Search room with parmater
 * [GET /room/available](#available) Get room avilablity dates.
 * [POST /room/book ](#book) Book a room.
 
+### Other
+
+ * [Installatioin](#install)
+ * [Directory Structure](#directory)
+ * [Status code](#status)
 
 
+
+
+
+
+
+<a id="endpoints"></a>
+
+<h1> ENDPOINTS</h1>
 
 <a id="register"></a>
 
-## User register
+### User register
 ```https
   POST /register
 ```
@@ -292,4 +305,74 @@ Server returns the following status codes in its API:
 | 404         | `NOT FOUND`             |
 | 500         | `INTERNAL SERVER ERROR` |
 
-#
+
+
+<a id="install"></a>
+
+## Install and Run on local Machine
+1. Clone the repository.
+```sh
+  git clone https://github.com/Ashism766/hotel-reservation.git
+```
+2. Install dependencies by running `npm install`.
+```sh
+  cd hotel-reservation
+  npm i 
+```
+3. Set up the required environment variables  in a `.env` file.
+    
+    Your `.env` file should look like this below.
+  
+   
+```sh
+    POSTGRES_PASSWORD= yourpassword
+    USER_NAME= add postgres username
+    HOST= hostname or ip 
+    PORT= 5432
+```
+
+4. Start the server by running `npm `.
+```sh
+  npm start
+```
+
+<a id="directory"></a>
+### Directory structure
+
+```bash
+    .
+├── README.md
+├── app
+│   ├── api
+│   │   ├── admin
+│   │   │   ├── controller.js
+│   │   │   ├── model
+│   │   │   │   └── model.js
+│   │   │   └── routes.js
+│   │   └── users
+│   │       ├── controller.js
+│   │       ├── model
+│   │       │   └── model.js
+│   │       └── routes.js
+│   ├── security
+│   │   ├── controller.js
+│   │   ├── model
+│   │   │   ├── model.js
+│   │   │   └── query.js
+│   │   └── routes.js
+│   └── utils
+│       └── logger.js
+├── app.js
+├── config
+│   └── config.json
+├── config.js
+├── logs
+│   ├── app.log
+│   └── error.log
+├── migrations
+│   ├── 20230715153307-create_relation_table.js
+│   └── package.json
+├── package-lock.json
+└── package.json
+
+```

@@ -28,7 +28,7 @@ const Booking = sequelize.define("Booking", {
         unique: true,
     },
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.UUID,
       allowNull: false,
     },
     username: {
