@@ -1,10 +1,10 @@
 import express from "express";
 
 import {
-  findRoom,
-  bookRoom,
-  findAvailableDates,
-  findAllRooms,
+    findRoom,
+    bookRoom,
+    findAvailableDates,
+    findAllRooms,
 } from "./controller.js";
 
 const Router = express.Router();

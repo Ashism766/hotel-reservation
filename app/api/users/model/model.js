@@ -6,17 +6,17 @@ import logger from "../../../utils/logger.js";
 
 // Database connection details
 const sequelize = new Sequelize(
-  config.database.database,
-  config.database.username,
-  config.database.password,
-  {
-    host: "localhost",
-    port: 5432,
-    dialect: "postgres",
-    logging: (log) => {
-      logger.info(`${log.message}`);
-    },
-  }
+    config.database.database,
+    config.database.username,
+    config.database.password,
+    {
+        host: "localhost",
+        port: 5432,
+        dialect: "postgres",
+        logging: (log) => {
+            logger.info(`${log.message}`);
+        },
+    }
 );
 
 const Booking = sequelize.define("Booking", {
@@ -28,31 +28,30 @@ const Booking = sequelize.define("Booking", {
         unique: true,
     },
     id: {
-      type: DataTypes.UUID,
-      allowNull: false,
+        type: DataTypes.UUID,
+        allowNull: false,
     },
     username: {
-      type: DataTypes.STRING,
-      allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: false,
     },
     startDate: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
+        type: DataTypes.DATEONLY,
+        allowNull: false,
     },
     endDate: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
+        type: DataTypes.DATEONLY,
+        allowNull: false,
     },
-  });
-
+});
 
 sequelize
-  .sync()
-  .then(() => {
-    console.log("Booking model synchronized with the database");
-  })
-  .catch((error) => {
-    console.error("Error synchronizing User model:", error);
-  });
+    .sync()
+    .then(() => {
+        console.log("Booking model synchronized with the database");
+    })
+    .catch((error) => {
+        console.error("Error synchronizing User model:", error);
+    });
 
 export default Booking;
